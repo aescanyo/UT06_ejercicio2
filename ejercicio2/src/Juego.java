@@ -80,6 +80,18 @@ public class Juego {
   public int MuestraVidasRestantes() {
     return vidasRestantes;
   }
+
+    public static int getRecord() {
+        return record;
+    }
+
+    public static void setRecord(int record) {
+        Juego.record = record;
+    }
+    
+    
+  
+  
     /**
      * método QuitaVida que disminuya en 1 el número de vidas del
      * jugador y devuelva un boolean indicando si al jugador le quedan más vidas
@@ -113,7 +125,29 @@ public class Juego {
     }
   
   
-  
+    /**
+     * método ActualizaRecord que compare el valor actual de récord con 
+* el número de vidas restantes.
+    ◦ Si el número de vidas restantes es igual al récord, mostrará un mensaje
+    * indicando que se ha alcanzado el récord.
+
+    ◦ Si el número de vidas restante es mayor que el récord, actualizará el 
+    * récord y mostrará un mensaje diciendo que éste se ha batido y cuál es su 
+    * nuevo valor.
+
+    ◦ Si el número de vidas es menor, no hará nada.
+    * 
+    * 
+     */
+    
+    public void actualizaRecord(){
+        if(this.vidasRestantes == getRecord()){
+            System.out.println("Se ha alcanzado el record");
+        }
+        if(this.vidasRestantes > getRecord()){
+            setRecord(this.vidasRestantes);
+        }
+    }
   
   /**
    * clase pincipal
